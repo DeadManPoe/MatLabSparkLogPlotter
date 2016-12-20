@@ -5,10 +5,9 @@ batch = [];
 execs = [];
 for i=1:length(files)
   if(length(regexp(files(i).name,file_regex)) ~=0)
-    batch = [batch;files(i).name];
+    batch{length(batch)+1} = files(i).name;
   end
 end
-for i=1:length(batch)
-  tmp = csvread(strcat(directory,batch(0),'app_1.csv'),2,0);
-  tmp
+for i=1:length(files)
+  batch{i}
 end
