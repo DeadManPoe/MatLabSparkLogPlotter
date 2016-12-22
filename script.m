@@ -42,15 +42,15 @@ function plotmeanexectime(node,query)
             execs = [execs, str2double(tmp{2,2}{1})-str2double(tmp{1,2}{1})];
         end
         totExecs = [totExecs; int32(mean(execs))];
-        executors = [executors, executorIndex];
+        executors = [executors, executorIndex*2];
         batch = {};
         execs = [];
     end
     title_string = horzcat(num2str(node),' Nodes',' Query',' ',query);
     figure;
-    bar(executors, totExecs);
+    plot(executors, totExecs);
     title(title_string);
-    xlabel('Executors');
+    xlabel('Executors Cores');
     ylabel('Execution time');
 end
 
