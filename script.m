@@ -46,9 +46,10 @@ function plotmeanexectime(node,query)
         batch = {};
         execs = [];
     end
-    title_string = strcat(num2str(node),' Nodes ','Query ',query);
+    title_string = horzcat(num2str(node),' Nodes',' Query',' ',query);
     figure;
     bar(executors, totExecs);
+    title(title_string);
     xlabel('Executors');
     ylabel('Execution time');
 end
