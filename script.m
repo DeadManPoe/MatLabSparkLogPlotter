@@ -1,9 +1,7 @@
 conf;
-
-
 for i=startingNode:endingNode
     for j=1:length(queries)
-        plotmeanexectime(i,queries{j});
+        plotmeanexectime(i,queries{j},cores_per_executor);
     end
 end
 

@@ -1,4 +1,4 @@
-function plotmeanexectime(node,query)
+function plotmeanexectime(node,query,cores_per_executor)
     file_regex = 'application_([0-9]+)_([0-9]+)_csv';
     executors_regex = '([0-9]+)Executors';
     num_regex = '([0-9]+)';
@@ -32,7 +32,7 @@ function plotmeanexectime(node,query)
             execs = [execs, str2double(tmp{2,2}{1})-str2double(tmp{1,2}{1})];
         end
         totExecs = [totExecs; int32(mean(execs))];
-        executors = [executors, executorIndex*2];
+        executors = [executors, executorIndex*cores_per_executor];
         batch = {};
         execs = [];
     end
