@@ -1,5 +1,6 @@
-startingNode = 7;
+startingNode = 3;
 endingNode = 7;
-cores_per_executor = 5;
+cores_per_executor = 2;
 queries = {'q26','Q52'};
-root_path = './tmp/';
+%Remember that the root_path should end with a /
+root_path = './';

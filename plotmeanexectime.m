@@ -37,10 +37,11 @@ function plotmeanexectime(query,cores_per_executor,root_path,startingNode,ending
             batch = {};
             execs = [];
         end
+        folders= {};
     end
     title_string = query;
     figure;
-    plot(executors, totExecs);
+    plot(executors, totExecs,'o r');
     title(title_string);
     xlabel('Executors Cores');
     ylabel('Execution time');
