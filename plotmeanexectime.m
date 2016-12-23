@@ -1,4 +1,4 @@
-function plotmeanexectime(node,query,cores_per_executor)
+function plotmeanexectime(node,query,cores_per_executor,root_path)
     file_regex = 'application_([0-9]+)_([0-9]+)_csv';
     executors_regex = '([0-9]+)Executors';
     num_regex = '([0-9]+)';
@@ -8,7 +8,7 @@ function plotmeanexectime(node,query,cores_per_executor)
     batch = {};
     totExecs = [];
     execs = [];
-    directory = strcat('./tmp/',num2str(node),'Nodes/',query);
+    directory = strcat(root_path,'/',num2str(node),'Nodes/',query);
     executors_files = dir(directory);
     for i=1:length(executors_files)
         if(~isempty(regexp(executors_files(i).name,executors_regex,'once')))
